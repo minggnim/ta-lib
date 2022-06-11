@@ -145,12 +145,12 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='ta-lib-bin',
-    version='0.4.25',
+    version='0.4.26',
     description='Python wrapper for TA-Lib',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    author='Ming Gao',
-    author_email='ming_gao@outlook.com',
+    author='John Benediktsson',
+    author_email='mrjbq7@gmail.com',
     url='https://github.com/minggnim/ta-lib',
     download_url='https://github.com/minggnim/ta-lib/releases',
     license='BSD',

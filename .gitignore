@@ -9,3 +9,5 @@ dist/
 *~
 *.egg-info/
 
+wheelhouse/
+*.tar.gz
