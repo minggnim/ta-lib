@@ -144,15 +144,15 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='TA-Lib',
+    name='ta-lib-bin',
     version='0.4.25',
     description='Python wrapper for TA-Lib',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    author='John Benediktsson',
-    author_email='mrjbq7@gmail.com',
-    url='http://github.com/mrjbq7/ta-lib',
-    download_url='https://github.com/mrjbq7/ta-lib/releases',
+    author='Ming Gao',
+    author_email='ming_gao@outlook.com',
+    url='https://github.com/minggnim/ta-lib',
+    download_url='https://github.com/minggnim/ta-lib/releases',
     license='BSD',
     classifiers=[
         "License :: OSI Approved :: BSD License",

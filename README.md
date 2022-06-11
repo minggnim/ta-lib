@@ -24,6 +24,36 @@ In addition, this project also supports the use of the
 [Polars](https://www.pola.rs) and [Pandas](https://pandas.pydata.org)
 libraries.
 
+This fork provides the binary builds for Linux and the instructions on 
+how to build binary wheels, so that the dependency requirement of having 
+TA-Lib installed on the Linux platforms is no longer necessary.
+
+## Installation pre-build binary
+
+Install pre-build binary from PyPI
+```
+$ pip install ta-lib-bin
+```
+
+## Build Wheels using [manylinux](https://github.com/pypa/manylinux)
+
+Install manylinux Docker image
+```
+docker run -it -v $(pwd):/io quay.io/pypa/manylinux2014_x86_64
+```
+
+Build manylinux Wheel
+```
+make install-ta-lib
+make manylinux-wheel
+make repair-manylinux-wheel
+```
+
+Test
+```
+make install-test
+```
+
 ## Installation
 
 You can install from PyPI:
