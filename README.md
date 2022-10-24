@@ -167,6 +167,8 @@ warnings.warn('Cannot find ta-lib library, installation may fail.')
 This typically means ``setup.py`` can't find the underlying ``TA-Lib``
 library, a dependency which needs to be installed.
 
+---
+
 If you installed the underlying ``TA-Lib`` library with a custom prefix
 (e.g., with ``./configure --prefix=$PREFIX``), then when you go to install
 this python wrapper you can specify additional search paths to find the
@@ -178,6 +180,8 @@ $ export TA_LIBRARY_PATH=$PREFIX/lib
 $ export TA_INCLUDE_PATH=$PREFIX/include
 $ python setup.py install # or pip install ta-lib
 ```
+
+---
 
 Sometimes installation will produce build errors like this:
 
@@ -203,6 +207,8 @@ dependency which needs to be installed.  On Windows, this could be caused by
 installing the 32-bit binary distribution of the underlying ``TA-Lib`` library,
 but trying to use it with 64-bit Python.
 
+---
+
 Sometimes installation will fail with errors like this:
 
 ```
@@ -220,6 +226,8 @@ something like:
 $ sudo apt-get install python3-dev
 ```
 
+---
+
 Sometimes building the underlying ``TA-Lib`` library has errors running
 ``make`` that look like this:
 
@@ -234,6 +242,8 @@ This might mean that the directory path to the underlying ``TA-Lib`` library
 has spaces in the directory names.  Try putting it in a path that does not have
 any spaces and trying again.
 
+---
+
 Sometimes you might get this error running ``setup.py``:
 
 ```
@@ -245,6 +255,21 @@ Sometimes you might get this error running ``setup.py``:
 This is likely an issue with trying to compile for 32-bit platform but
 without the appropriate headers.  You might find some success looking at the
 first answer to [this question](https://stackoverflow.com/questions/54082459/fatal-error-bits-libc-header-start-h-no-such-file-or-directory-while-compili).
+
+---
+
+If you get an error on macOS like this:
+
+```
+code signature in <141BC883-189B-322C-AE90-CBF6B5206F67>
+'python3.9/site-packages/talib/_ta_lib.cpython-39-darwin.so' not valid for
+use in process: Trying to load an unsigned library)
+```
+
+You might look at [this question](https://stackoverflow.com/questions/69610572/how-can-i-solve-the-below-error-while-importing-nltk-package)
+and use ``xcrun codesign`` to fix it.
+
+---
 
 If you wonder why ``STOCHRSI`` gives you different results than you expect,
 probably you want ``STOCH`` applied to ``RSI``, which is a little different
@@ -266,6 +291,8 @@ than the ``STOCHRSI`` which is ``STOCHF`` applied to ``RSI``:
 >>> rsi = talib.RSI(c)
 >>> k, d = talib.STOCH(rsi, rsi, rsi)
 ```
+
+---
 
 If the build appears to hang, you might be running on a VM with not enough
 memory -- try 1 GB or 2 GB.
